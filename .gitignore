@@ -32,8 +32,8 @@
 *.app
 
 #Folders
-.vs/*
-out/*
+*/.vs/*
+*/out/*
 
 # local settings
 */CMakeSettings.json
