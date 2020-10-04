@@ -34,3 +34,6 @@
 #Folders
 .vs/*
 out/*
+
+# local settings
+*/CMakeSettings.json
