@@ -5,7 +5,7 @@ if(TRAVIS_BUILD_NUMBER)
 else()
    project(helloworld VERSION 0.0.1)
    set(BOOST_ROOT c:/_local/boost_1_74_0)
-   set(IS_LOCAL_BUILD 1)
+   #set(IS_LOCAL_BUILD 1)
    add_definitions(-DIS_BUILD_LOCAL=${IS_BUILD_LOCAL})
 endif()
 
