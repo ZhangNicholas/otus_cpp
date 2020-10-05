@@ -4,13 +4,9 @@ if($ENV{TRAVIS_BUILD_NUMBER})
     project(helloworld VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER})
 else()
    project(helloworld VERSION 0.0.1)
-   set(BOOST_ROOT c:/_local/boost_1_74_0)
+   set(BOOST_ROOT $ENV{BOOST_ROOT})
    add_definitions(-DIS_BUILD_LOCAL=${IS_BUILD_LOCAL})
 endif()
-
-#set(Boost_DEBUG 1)
-#set(Boost_ADDITIONAL_VERSIONS "1.74.0")
-#set(BOOST_LIBRARYDIR c:/_local/boost_1_74_0/lib64-msvc-14.2)
 
 find_package(Boost COMPONENTS unit_test_framework REQUIRED)
 
