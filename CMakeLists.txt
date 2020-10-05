@@ -1,11 +1,15 @@
 ﻿cmake_minimum_required(VERSION 3.2)
 
+option(IS_BUILD_LOCAL "Is build local" OFF)
+
 if($ENV{TRAVIS_BUILD_NUMBER})
     project(helloworld VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER})
 else()
    project(helloworld VERSION 0.0.1)
-   set(BOOST_ROOT $ENV{BOOST_ROOT})
-   add_definitions(-DIS_BUILD_LOCAL=${IS_BUILD_LOCAL})
+endif()
+
+if(${IS_BUILD_LOCAL})
+    add_compile_definitions(IS_BUILD_LOCAL)
 endif()
 
 find_package(Boost COMPONENTS unit_test_framework REQUIRED)
